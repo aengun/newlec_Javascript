@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        // 11월 23일 수업
         // // var x = new Number(3);
         // // alert("Hello Javascript!!!");
         // // alert(x);
@@ -108,9 +109,171 @@
         // nums.splice(2,1); // 인덱스 2에서 1개를 지운다
         // console.log(nums);
 
-        var nums = new Array(5, 10, 21, "hello");
-        nums.splice(1, 0, 23); // 인덱스 1의 위치에서 삭제는 하지 않고 23을 추가한다.
-        console.log(nums);
+        // var nums = new Array(5, 10, 21, "hello");
+        // nums.splice(1, 0, 23); // 인덱스 1의 위치에서 삭제는 하지 않고 23을 추가한다.
+        // console.log(nums);
+
+        //----------------------------------------------------------------------    
+        // 11월 24일 수업
+        // var notice = new Object(); // map과 비슷하다
+        // notice.id = 1;
+        // notice.title = "JS란 무엇인가?"; // = notice["title"] = "JS란 무엇인가?";
+        // //notice["writer id"] = "newlec"; // notice.writer id = "newlec";  -->  띄어쓰기는 이런 식으로 불가! 대괄호 써야함
+        // notice["writerId"] = "newlec";
+
+        // console.log(notice);
+
+
+        // var keys = new Array("id", "title", "writerId");
+        // for (var i = 0; i < keys.length; i++)
+        //     console.log(notice[keys[i]]);
+
+        //---------------------------------------------------------------------- 
+        //위의 notice는 다음과 같이 정의할 수 있다.
+        // var notice = { id: 1, title: "JS란 무엇인가", writerId: "newlec" }; //칼럼, 키값(id,title,writerId)은 ""를 안써도 됨, 예약어와 같이 오류가 날 수 있으면 써랑~~
+        // console.log(notice);
+
+        //---------------------------------------------------------------------- 
+        // var notices = [
+        //     { id: 1, title: "JS란 무엇인가1", writerId: "newlec1" },
+        //     { id: 2, title: "JS란 무엇인가2", writerId: "newlec2" },
+        //     { id: 3, title: "JS란 무엇인가3", writerId: "newlec3" }
+        // ];
+
+        // console.log(notices[1].title);
+
+        //---------------------------------------------------------------------- 
+        // eval() : 문자열을 코드로 변환
+        // var code = "var x = 30;";
+        // eval(code);
+        // console.log(x);
+
+        // var json = '{"kor":35, "eng":44, "math":51}';
+        // eval("var exam = "+json+";");
+
+        // console.log(exam.kor);
+
+        //---------------------------------------------------------------------- 
+        // JSON 파서 : JSON 문자열만을 객체화 하는 JSON 특화 도구
+        // var json = '{"kor":30, "eng":40, "math":50}';
+        // var exam = JSON.parse(json);
+        // console.log(exam.kor);
+
+        //stringfy : 문자열로 바꾸기
+        // var notices = [
+        //     { id: 1, title: "JS란 무엇인가1", writerId: "newlec1" },
+        //     { id: 2, title: "JS란 무엇인가2", writerId: "newlec2" },
+        //     { id: 3, title: "JS란 무엇인가3", writerId: "newlec3" }
+        // ];
+
+        // console.log(notices[1].title);
+
+        // var json = JSON.stringify(notices);
+        // console.log(json);
+
+        //---------------------------------------------------------------------- 
+        //연산자
+        // var name1 = "hong";
+        // var name2 = "hong";
+
+        // console.log(name1 == name2); //값을 비교
+        // console.log(name1 === name2); //참조를 비교
+        // // 한 번 매핑된 문자열 객체는 name2에 그대로 전달해서 위의 코드는 true가 된다.
+
+        // var name3 = "hong";
+        // var name4 = new String("hong");
+
+        // console.log(name3 == name4); //값을 비교
+        // console.log(name3 === name4); //참조를 비교
+        // // 다른 객체를 생성해서 위의 코드는 false
+
+        //---------------------------------------------------------------------- 
+        // for in : 키 값을 뺀다 / for of : 값을 뽑아낸다.
+        // var ar = ["철수", "영희", "맹구", "동천"];
+
+        // for (i in ar){
+        //     // console.log(ar[i]);
+        //     console.log(i);
+        // }
+
+        // for(v of ar){
+        //     console.log(v);
+        // }
+
+        // var record = { "kor": 30, "eng": 40, "math": 50 };
+
+        // for (var k in record) 
+        //     console.log(k);
+
+        // for (var v of record)  //이터레이터 구현 안하면 오류남
+        //     console.log(v);
+
+        //---------------------------------------------------------------------- 
+        // 함수 -> js에서는 객체이다. >> 변수에 대입 가능
+        // var add = new Function("x,y", "return x+y");
+        // console.log(add(4,19));
+
+        // var add1 = function(x,y){ //제일 많이 쓰는 형식
+        //     return x+y;
+        // }
+        // console.log(add1(4,19));
+
+        // function add2(x,y){
+        //     return x+y;
+        // };
+        // console.log(add2(4,19));
+
+        // add2(3,4,5,6); // 매개변수를 선언한 대로 안넣어도 오류는 안남 : 인자가 아니라 arguments 콜렉션으로 전달하기 때문
+        // add2();
+
+        //---------------------------------------------------------------------- 
+        // 선언 순서 바꾸면..?
+        // console.log(a); //오류가 아니라 undefined가 된다. >> 자바스크립트에 정의는 없다. 선언은 되었다는 뜻
+        // var a = 1; // 위 코드가 호출된 후에서야 값이 할당된다. 위에서 선언 후 이 줄에서 할당되는 것.
+
+        // // = window.b = 1; b:윈도우의 속성이 된다.
+        // b = 17; // js에서는 변수를 선언하지 않아도 된다.
+        // console.log(b);
+        // console.log(window.b);
+
+        // var c; // 선언만 하고 할당 안하기~
+        // console.log(c);
+        // js에서 전역변수는 의미가 없다. 모두 window객체의 속성이 된다.
+        // var : function안에 들어가면 의미가 달라진다.
+        // window에 붙여 쓰면 전역 변수가 된다.
+
+        //----------------------------------------------------------------------
+        // 병준이형 질문
+        // a;  // Map map = new HashMap();
+        //     // map.put("a", 1); -> map.put("a"); : undefined
+        //     // var a;하면 undefined로 자동 세팅됨
+        //     // a;하면 컬렉션에 추가가 안됨
+        // console.log(a);
+
+        test = new Object();
+        console.log(window.test);
+        test.a;
+        console.log(window.test.a);
+        window.a;
+        console.log(a);
+
+        //----------------------------------------------------------------------
+        // 11월 25일 수업
+
+
+        //----------------------------------------------------------------------
+
+
+        //----------------------------------------------------------------------
+
+
+        //----------------------------------------------------------------------
+
+
+        //----------------------------------------------------------------------
+
+
+        //----------------------------------------------------------------------
 
     </script>
 </head>
