@@ -14,7 +14,7 @@
 // }
 
 window.addEventListener("load", function () {
-    console.log("print script")
+    console.log("print script");
     var btnPrint = document.getElementById("btn-print");
     btnPrint.onclick = printResult;
 

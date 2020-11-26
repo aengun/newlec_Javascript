@@ -12,12 +12,12 @@ window.addEventListener("load", function () {
     var result = document.getElementById("result");
 
     var x, y;
-    var hit = 0;
+    var operator;
 
     button1.onclick = function () {
         result.value = button1.value;
         hit++;
-        if(hit == 1){
+        if(x === null){
             x = result.value;
         } else if(hit == 2){
             y = result.value;
