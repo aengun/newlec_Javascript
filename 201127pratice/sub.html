@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>목록 (남은 시간 :  <span class="count-span"></span>초)</h1>
+    <ul>
+        <li><span class="choice-span1"></span><input type="button" value="선택"></li>
+        <li><span class="choice-span2"></span><input type="button" value="선택"></li>
+    </ul>
+
+    <script>
+
+        window.onload = function(){
+        
+            var btn1 = document.getElementsByTagName("input")[0];
+            var btn2 = document.getElementsByTagName("input")[1];
+            var countSpan = document.getElementsByClassName("count-span")[0];
+            var choiceSpan1 = document.getElementsByClassName("choice-span1")[0];
+            var choiceSpan2 = document.getElementsByClassName("choice-span2")[0];
+
+            var count = 3;
+            countSpan.innerText = count;
+
+            var choice1 = "김성현 바보";
+            var choice2 = "김지훈 바보";
+            choiceSpan1.innerText = choice1;
+            choiceSpan2.innerText = choice2;
+
+            var addressInput = opener.document.getElementsByClassName("address-input")[0];
+
+            btn1.onclick = function(){
+                btn1.value = "<- 선택 됨";
+                var timerId = setInterval(function(){
+                    count--;
+                    countSpan.innerText = count;
+
+                    if(count == 0){
+
+                        clearInterval(timerId);
+                        addressInput.value = choice1;
+                        window.close();
+                    }
+
+                }, 1000);
+            };
+
+            btn2.onclick = function(){
+                btn2.value = "<- 선택 됨";
+                var timerId = setInterval(function(){
+                    count--;
+                    countSpan.innerText = count;
+
+                    if(count == 0){
+
+                        clearInterval(timerId);
+                        addressInput.value = choice2;
+                        window.close();
+                    }
+
+                }, 1000);
+            };
+
+        };
+        
+    </script>
+</body>
+</html>
