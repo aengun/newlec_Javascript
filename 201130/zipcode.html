@@ -21,11 +21,13 @@
             // btn1.value="하하하";
 
             var btn1 = document.getElementsByTagName("input")[0];
-            
+
             btn1.onclick = function(){
-                var zipcodeInput = opener.document.getElementsByClassName("zipcode-input")[0]; // 이 창을 오픈한 부모 객체를 변경
-                zipcodeInput.value = "123456";
-                window.close();
+                // var zipcodeInput = opener.document.getElementsByClassName("zipcode-input")[0]; // 이 창을 오픈한 부모 객체를 변경
+                // zipcodeInput.value = "123456";
+                // window.close();
+                var h1 = parent.document.getElementsByTagName("h1")[0];
+                h1.innerText = "하하하";
             }
 
         }
