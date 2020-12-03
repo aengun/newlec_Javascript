@@ -29,7 +29,7 @@ window.addEventListener("load", function(){
         var oldOne = container.children[num1];
         var newOne = container.children[num2];
         container.replaceChild(newOne, oldOne); 
-        container.insertBefore(oldOne, newOne);
+        container.insertBefore(oldOne, container.children[num2]);
     };
 
 });
