@@ -1,24 +1,57 @@
 
 
 
-
-
-
 // s11 ==========================================
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
 
     var section = document.querySelector("#s11");
     var button1 = section.querySelector(".button1");
+    var tbody = section.querySelector("tbody");
+    var pager = section.querySelector(".pager");
 
-    button1.onclick = function(e){ // request : xhr로 쓰기도 한다.
+    tbody.onclick = function(e){
+        if(e.target.tagName != "a") // a태그 아니면 리턴하도록 필터링
+            return;
+    }
 
-        var request = new XMLHttpRequest();
-        request.open("GET", "/201217/data.txt", false); // true : 비동기
-        request.send();
+    pager.onclick = function(e){
+        e.preventDefault();
+        var page = parseInt(e.target.innerText);
+        console.log(page);
+        load(page);
+	}
 
-        alert(request.responseText);
-
+    button1.onclick = function (e) { 
+        load();
     };
+
+    function load(page){
+        var request = new XMLHttpRequest();
+        request.onload = function () {
+
+            tbody.innerHTML=""; // 페이지 누적을 방지
+
+            var notices = JSON.parse(request.responseText);
+
+            for (var i = 0; i < notices.length; i++) {
+                var tr = '<tr> \
+                        <td>'+ notices[i].id + '</td> \
+                        <td><a href="detail.html">'+ notices[i].title + '</a></td> \
+                        <td>'+ notices[i].writerId + '</td> \
+                        <td> \
+                            2019-08-18 \
+                        </td> \
+                        <td>146</td> \
+						<td><a href="">수정</a> / <a href="">삭제</a></td>\
+                    	</tr>';
+
+                tbody.insertAdjacentHTML('beforeend', tr);
+            }
+        }
+
+        request.open("GET", "/api/board/notice/list?p="+page, true); 
+        request.send();
+    }
 
 });
 
@@ -39,13 +72,13 @@ window.addEventListener("load", function () {
     // 이벤트 버블링에 대한 문제와 해결 방법 2 : notification
     // addeventlistener : 이벤트 누적 + 인자를 늘릴 수 있다.
     showRoomImg.style.transition = "500ms";
-    showRoom.addEventListener("click",function(e){
+    showRoom.addEventListener("click", function (e) {
         e.stopPropagation(); // 부모만 호출하고 자식은 X
         console.log("img의 부모 clicked");
         showRoomImg.style.transform = "scale(1.2,1.2)";
     }, true)
 
-    showRoomImg.onclick = function(e){
+    showRoomImg.onclick = function (e) {
         console.log("img clicked");
         e.target.style.transform = "scale(1.7,1.7)";
     }
@@ -445,7 +478,7 @@ window.addEventListener("load", function () {
     var win;
 
     searchButton.onclick = function () {
-        win = open("zipcode.html", "_blank", "width=300px, height=200px");
+        win = open("ex1-zipcode.html", "_blank", "width=300px, height=200px");
 
     };
 
