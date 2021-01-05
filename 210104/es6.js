@@ -162,7 +162,7 @@
             this.#kor = kor;
             this.#eng = eng;
             this.#math = math;
-            Exam.#count++;
+            Exam.count++;
         }
 
         get kor(){
@@ -178,7 +178,7 @@
         }
 
         get count(){
-            return Exam.#count;
+            return Exam.count;
         }
 
         set kor(value){
@@ -222,13 +222,13 @@
         #kor;
         #eng;
         #math;
-        static #count = 0;
+        static count = 0;
 
         constructor(kor = 0, eng = 0, math = 0) {
             this.#kor = kor;
             this.#eng = eng;
             this.#math = math;
-            Exam.#count++;
+            Exam.count++;
         }
 
         get kor(){
@@ -244,7 +244,7 @@
         }
 
         get count(){
-            return Exam.#count;
+            return Exam.count;
         }
 
         set kor(value){
@@ -323,3 +323,9 @@ console.log(Exam.count);
 4. extends / super / override
 
 */
+
+
+// prototyle vs class 
+// 1. class : new를 사용하지 않고는 호출할 수 없는 함수
+// 2. 열거할 수 없음(콜렉션 사용 불가)
+// 3. strict mode(<->normal, sloppy mode)
