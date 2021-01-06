@@ -9,3 +9,5 @@ console.log(o);
 f.prototype.b = 3;
 f.prototype.c = 4;
 console.log(o);
+
+console.log("hello");
