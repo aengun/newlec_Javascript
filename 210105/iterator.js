@@ -59,6 +59,29 @@
                 yield this.#data[i];
         }
     }
+
+    let list = new List();
+    list.add(3);
+    list.add(9);
+
+    let it = list.iterator();
+    let result = it.next();
+    while (!result.done) {
+        console.log(result.value);
+        result = it.next();
+    }
+
+    for (let n of list.iterator())
+        console.log(`n : ${n}`);
+
+    let ar = [...list.iterator()]; //
+    console.log(ar);
+
+    function print(a, b, c) {
+        console.log(a + ", " + b + ", " + c);
+    }
+
+    print(...list.iterator());
 }
 // =====================================================
 
