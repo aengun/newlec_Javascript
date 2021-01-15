@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+
+    <script type="text/babel"> 
+    // 더이상 자바스크립트 영역이 아니다,, 바벨스크립트의 영역!
+        window.addEventListener("load", (e) => {
+            let root = document.querySelector("#root");
+
+            // ReactDOM.render("Hello, ReactJS!", root); // react의 기능을 이용해 render에게 데이터를 꼽도록 시킨다.
+            ReactDOM.render(<h1>Hello, ReactJS!!</h1>, root); // 이대로 쓰면 오류가 난다(JSX) ==> Babel컴파일러의 도움을 받아야함
+        });
+    </script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
