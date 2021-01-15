@@ -2,12 +2,14 @@
 // new.target Metaproperty
 {
     function Exam(kor, eng, math) {
+        // console.log(kor);
         console.log(this instanceof Exam);
+        // console.log("=================");
     }
     // typeof : primitive type, instance of : object type  
 
-    let exam1 = new Exam(10, 20, 30);
-    let exam2 = Exam(10, 20, 30);
+    let exam1 = new Exam(11, 20, 30); // true
+    let exam2 = Exam(10, 20, 30); // false
 }
 
 // =====================================================
@@ -19,7 +21,6 @@ function Alert(selector) {
 
     this.btn1.onlick = this.btn1Click;
     this.x = 30;
-
 }
 
 Alert.prototype = {
@@ -53,11 +54,11 @@ Alert.prototype = {
 
 {
     function Exam(kor, eng, math){
-        console.log("instance=====================")
+        console.log("instance============")
         console.log(this instanceof Exam);
-        console.log("type=====================")
+        console.log("type================")
         console.log(typeof new.target);
-        console.log("=====================")
+        console.log("====================")
     }
 
     let exam1 = new Exam(10,11,12);

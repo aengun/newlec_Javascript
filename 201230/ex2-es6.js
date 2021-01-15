@@ -57,7 +57,7 @@
         // 뽀개기 속성에 별칭 주기
         let { eng: english, kor, total = 0 } = exam;
         //select eng english, kor, 0 from exam;
-        console.log(`kor : ${kor}, eng : ${english}, total : ${total}`);
+        console.log(`kor : ${kor}, english : ${english}, total : ${total}`);
     }
 }
 

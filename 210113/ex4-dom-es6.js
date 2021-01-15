@@ -40,7 +40,7 @@ window.addEventListener("load", (e) => {
 
     // 1. 객체를 넘겨주거나
     // let container = document.querySelector("#s1 .container");
-    //  let dragBox = new DragBox(container);
+    // let dragBox = new DragBox(container);
 
     // 2. 객체를 선택하라고 하거나
     let dragBox = new DragBox("#s1 .container");
@@ -110,7 +110,7 @@ window.addEventListener("load", (e) => {
             ModalBox.alert("파일 형식이 아닙니다.")
         }
 
-        console.log("drop : " + e.dataTransfer);
+        // console.log("drop : " + e.dataTransfer);
     });
 
     dropZone.addEventListener("dragover", (e) => {
@@ -130,7 +130,7 @@ window.addEventListener("load", (e) => {
         //     CSS
         dropZone.firstElementChild.innerText = message;
 
-        console.log("dragover : " + e.dataTransfer);
+        // console.log("dragover : " + e.dataTransfer);
     });
 
     dropZone.addEventListener("dragenter", (e) => {
@@ -142,7 +142,7 @@ window.addEventListener("load", (e) => {
             borderRadius: "0px"
         })
 
-        console.log("enter : " + e.dataTransfer);
+        // console.log("enter : " + e.dataTransfer);
     });
 
     dropZone.addEventListener("dragleave", (e) => {
@@ -156,7 +156,6 @@ window.addEventListener("load", (e) => {
 
         dropZone.firstElementChild.innerText = "업로드할 파일을 드래그 드롭하세요!";
 
-
-        console.log("exit");
+        // console.log("exit");
     });
 });

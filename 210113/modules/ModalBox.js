@@ -183,7 +183,7 @@ class ModalBox {
                 ${title}
             </div>
             <div style="flex-grow: 1; display:flex;justify-content: center;align-items: center;">
-                내용
+                ${message}
             </div>
             <div style="display:flex;justify-content: center; border-top: 1px solid #e9e9e9;">
                 <input type="button" value="OK">

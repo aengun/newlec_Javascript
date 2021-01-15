@@ -148,6 +148,8 @@
     // exam.setKor(exam.getKor()+1);
     // getter을 통해 값 가져오기
     console.log(exam.kor);
+    exam.kor = 999999; // 세터가 없어서 해도 안먹음,, 오류도 안남
+    console.log(exam.kor);
 }
 // =======================================================
 
@@ -210,6 +212,10 @@
     let exam2 = new Exam(15, 18, 20);
     console.log(exam.total());
     console.log(exam2.total());
+
+    console.log(exam.kor);
+    exam.kor++;
+    console.log(exam.kor);
 
     //객체 생성 후 count
     console.log(`생성 후 count : ${Exam.count}`);
