@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        window.addEventListener("load", (e) => {
+
+            let data = { message: "Hello~", title: "제목" }; // 모델
+
+            // 기존 방식
+            // const app = document.querySelector("#app");
+            // app.innerHTML = data.message;
+
+            // 1 Way : Model -> View
+            // 2 Way : View -> Model // -> View
+
+
+            let app = new Vue({
+                el: '#app',
+                data
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        {{title}} <br>
+        <input type="text" v-modle="title">
+    </div>
+</body>
+
+</html>
