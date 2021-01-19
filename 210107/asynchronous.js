@@ -159,7 +159,7 @@
 //         let notice = await getNotice(2);
 //         console.log(notice.title);
 //         console.log("(async)메인 스레드는 계속 된다.")
-//     }());
+//     }()); 
 // }
 // =====================================================
 
