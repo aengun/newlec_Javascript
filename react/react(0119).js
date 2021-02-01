@@ -1,7 +1,7 @@
 // ReactDOM.render("test", document.querySelector("#root"));
 // react의 강점 : 컴포넌트
 
-/*function Clock(props){
+/*function Clock(props){ // props : 속성으로 값을 전달받는다.
 	//const element = (
 	//	<section>
 	//		<h1>America/Toronto</h1>
